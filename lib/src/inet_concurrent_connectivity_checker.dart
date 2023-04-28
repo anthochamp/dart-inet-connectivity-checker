@@ -54,7 +54,8 @@ class InetConcurrentConnectivityChecker {
     }
   }
 
-  bool _canceledOrCompleted() => _completer.isCanceled || _completer.isCompleted;
+  bool _canceledOrCompleted() =>
+      _completer.isCanceled || _completer.isCompleted;
 
   void _complete(bool result) {
     _completer.complete(result);
@@ -73,7 +74,8 @@ class InetConcurrentConnectivityChecker {
     if (_fillOperationsLocked) return;
     _fillOperationsLocked = true;
 
-    while (!_canceledOrCompleted() && _runningOperations.length < maxConcurrency) {
+    while (
+        !_canceledOrCompleted() && _runningOperations.length < maxConcurrency) {
       if (!_endpointsIterator.moveNext()) {
         break;
       }
