@@ -1,6 +1,6 @@
 name: ac_inet_connectivity_checker
 description: A simple Internet Connectivity Checker
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/anthochamp/dart-inet-connectivity-checker
 
 environment:

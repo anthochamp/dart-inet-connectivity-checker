@@ -9,6 +9,8 @@ An Internet Connectivity Checker :
 **This package is not meant to be used with Flutter on the Web**
 
 If you search for a stateful Internet Connectivity Checker, check out these packages :
+- [data_connection_checker](https://pub.dev/packages/data_connection_checker)
+- [internet_connection_checker](https://pub.dev/packages/internet_connection_checker)
 - [internet_connection_checker_plus](https://pub.dev/packages/internet_connection_checker_plus)
 - [ac_connectivity_plus_extended](https://pub.dev/packages/ac_connectivity_plus_extended)
 
@@ -26,6 +28,9 @@ final checker = InetConnectivityChecker(
 
 // tired of waiting?
 // checker.cancel();
+
+final isConnected = await checker.cancelableOperation.value;
+
 ```
 
 ### Test on multiple endpoints
@@ -48,6 +53,8 @@ final checker = InetConcurrentConnectivityChecker(
   // optionally, define the maximum concurrency (default is 2)
   maxConcurrency: 4,
 );
+
+final isConnected = await checker.cancelableOperation.value;
 ```
 
 ## Which endpoints to use?
@@ -74,7 +81,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 final result = await Connectivity().checkConnectivity();
 
-if (result == ConnectivitResult.none) {
+if (result == ConnectivityResult.none) {
   // not connected to the Internet
 } else {
   // connected to the Internet
