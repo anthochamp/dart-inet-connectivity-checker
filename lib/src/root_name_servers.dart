@@ -1,8 +1,12 @@
-import 'connectivity_checker_endpoint.dart';
+// Copyright 2023, Anthony Champagne. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+import 'inet_endpoint.dart';
 
 // https://www.internic.net/domain/named.root
 
-const kRootDnsServersIpV4Addresses = <String>[
+const kRootNameServersIpV4Addresses = <String>[
   /// a.root-servers.net - Verisign, Inc.
   '198.41.0.4',
 
@@ -43,7 +47,7 @@ const kRootDnsServersIpV4Addresses = <String>[
   '202.12.27.33',
 ];
 
-const kRootDnsServersIpV6Addresses = <String>[
+const kRootNameServersIpV6Addresses = <String>[
   /// a.root-servers.net - Verisign, Inc.
   '2001:503:ba3e::2:30',
 
@@ -86,10 +90,10 @@ const kRootDnsServersIpV6Addresses = <String>[
 
 const kDnsServerTcpPort = 53;
 
-final kRootDnsServersIpV4Endpoints = kRootDnsServersIpV4Addresses.map(
-  (ip) => ConnectivityCheckerEndpoint(host: ip, port: kDnsServerTcpPort),
+final kRootNameServersIpV4Endpoints = kRootNameServersIpV4Addresses.map(
+  (ip) => InetEndpoint(host: ip, port: kDnsServerTcpPort),
 );
 
-final kRootDnsServersIpV6Endpoints = kRootDnsServersIpV6Addresses.map(
-  (ip) => ConnectivityCheckerEndpoint(host: ip, port: kDnsServerTcpPort),
+final kRootNameServersIpV6Endpoints = kRootNameServersIpV6Addresses.map(
+  (ip) => InetEndpoint(host: ip, port: kDnsServerTcpPort),
 );
