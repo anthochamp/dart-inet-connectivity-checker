@@ -9,9 +9,9 @@ An Internet Connectivity Checker :
 **This package is not meant to be used with Flutter on the Web**
 
 If you search for a stateful Internet Connectivity Checker, check out these packages :
+- [ac_connectivity](https://pub.dev/packages/ac_connectivity)
 - [internet_connection_checker](https://pub.dev/packages/internet_connection_checker)
 - [internet_connection_checker_plus](https://pub.dev/packages/internet_connection_checker_plus)
-- [ac_connectivity_plus_extended](https://pub.dev/packages/ac_connectivity_plus_extended)
 
 ## Usage
 
