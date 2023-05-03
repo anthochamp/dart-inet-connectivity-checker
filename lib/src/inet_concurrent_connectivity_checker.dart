@@ -40,16 +40,20 @@ class InetConcurrentConnectivityChecker {
 
   late final CancelableCompleter<bool> _completer;
   late final Iterator<InetEndpoint> _endpointsIterator;
-  late final Timer? _timeoutTimer;
   final _runningOperations = <CancelableOperation<bool>>[];
+  Timer? _timeoutTimer;
   bool _fillOperationsLocked = false;
 
   CancelableOperation<bool> get cancelableOperation => _completer.operation;
 
   void _clean() {
     _timeoutTimer?.cancel();
+    _timeoutTimer = null;
 
-    for (final operation in _runningOperations) {
+    final runningOperations = [..._runningOperations];
+    _runningOperations.clear();
+
+    for (final operation in runningOperations) {
       operation.cancel();
     }
   }
@@ -58,7 +62,10 @@ class InetConcurrentConnectivityChecker {
       _completer.isCanceled || _completer.isCompleted;
 
   void _complete(bool result) {
-    _completer.complete(result);
+    if (!_canceledOrCompleted()) {
+      _completer.complete(result);
+    }
+
     _clean();
   }
 
