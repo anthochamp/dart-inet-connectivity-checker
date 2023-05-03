@@ -1,4 +1,4 @@
-# A simple Internet Connectivity Checker
+# A simple stateless Internet Connectivity Checker
 
 An Internet Connectivity Checker :
 - Which can test single or multiple endpoints (with configurable concurrency),
@@ -9,7 +9,6 @@ An Internet Connectivity Checker :
 **This package is not meant to be used with Flutter on the Web**
 
 If you search for a stateful Internet Connectivity Checker, check out these packages :
-- [data_connection_checker](https://pub.dev/packages/data_connection_checker)
 - [internet_connection_checker](https://pub.dev/packages/internet_connection_checker)
 - [internet_connection_checker_plus](https://pub.dev/packages/internet_connection_checker_plus)
 - [ac_connectivity_plus_extended](https://pub.dev/packages/ac_connectivity_plus_extended)
@@ -69,7 +68,7 @@ Be-aware that it is more than likely that your application will have to be compa
 final endpoints = [
   ...kRootNameServersIpV4Endpoints,
   ...kRootNameServersIpV6Endpoints,
-].shuffle();
+]..shuffle();
 ```
 
 ## Internet Connection Check for Flutter on the Web
@@ -86,6 +85,33 @@ if (result == ConnectivityResult.none) {
 } else {
   // connected to the Internet
 }
+
+Connectivity().onConnectivityChanged.listen((result) {
+  // on connectivity changes
+});
+
 ```
 
-Or the [ac_connectivity_plus_extended](https://pub.dev/packages/ac_connectivity_plus_extended) package which extend connectivity_plus with safe Internet connectivity checks.
+Or the [ac_connectivity](https://pub.dev/packages/ac_connectivity) package which extend connectivity_plus with Internet connectivity on all platform :
+
+```dart
+import 'package:ac_connectivity/ac_connectivity.dart';
+
+final cancelableOperation = Connectivity().checkInetConnectivityState(
+  timeout: const Duration(seconds: 3),
+);
+
+final state = await cancelableOperation.value;
+
+if (state == InetConnectivityState.disconnected) {
+  // disconnected (same as ConnectivityResult.none)
+} else if (state == InetConnectivityState.connected) {
+  // connected to a network without Internet access.
+} else if (state == InetConnectivityState.internet) {
+  // connected to Internet.
+}
+
+Connectivity().listen((state) {
+  // on Internet connectivity state changes
+});
+```
