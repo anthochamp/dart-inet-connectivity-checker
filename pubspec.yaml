@@ -4,7 +4,7 @@ version: 0.1.2
 repository: https://github.com/anthochamp/dart-inet-connectivity-checker
 
 environment:
-  sdk: '>=2.19.5 <3.0.0'
+  sdk: '>=2.19.5 <4.0.0'
 
 dependencies:
   async: ^2.10.0
