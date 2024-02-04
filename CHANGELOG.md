@@ -1,3 +1,9 @@
+## 0.1.3
+
+- Update LICENSE's copyright to include contributors and use SPDX file header
+- Widen SDK environment requirement to include Dart 3 versions
+- Upgrade ac_lints package to 0.2.0
+
 ## 0.1.2
 
 - fix InetConcurrentConnectivityChecker bad state errors
