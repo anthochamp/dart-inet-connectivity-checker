@@ -7,15 +7,12 @@ import 'dart:io';
 
 import 'package:async/async.dart';
 
-import 'inet_endpoint.dart';
+import 'inet_connectivity_checker_base.dart';
 
-class InetConnectivityChecker {
-  final InetEndpoint endpoint;
-  final Duration? timeout;
-
+class InetConnectivityChecker extends InetConnectivityCheckerBase {
   InetConnectivityChecker({
-    required this.endpoint,
-    this.timeout,
+    required super.endpoint,
+    super.timeout,
   }) {
     _completer = CancelableCompleter<bool>(onCancel: () {
       _connectionTask?.cancel();
@@ -27,8 +24,10 @@ class InetConnectivityChecker {
   late final CancelableCompleter<bool> _completer;
   ConnectionTask<Socket>? _connectionTask;
 
+  @override
   CancelableOperation<bool> get cancelableOperation => _completer.operation;
 
+  @override
   void cancel() {
     cancelableOperation.cancel();
   }

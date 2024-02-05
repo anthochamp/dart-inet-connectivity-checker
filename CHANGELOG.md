@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Add a stub implementation for JS platform
+
 ## 0.1.3
 
 - Update LICENSE's copyright to include contributors and use SPDX file header
