@@ -6,7 +6,8 @@ import 'dart:async';
 
 import 'package:async/async.dart';
 
-import 'inet_connectivity_checker_vm.dart' if (dart.library.html) 'inet_connectivity_checker_js.dart';
+import 'inet_connectivity_checker_vm.dart'
+    if (dart.library.html) 'inet_connectivity_checker_js.dart';
 import 'inet_endpoint.dart';
 
 class InetConcurrentConnectivityChecker {

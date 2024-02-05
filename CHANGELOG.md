@@ -1,3 +1,7 @@
+## 0.1.5
+
+- Minor changes
+
 ## 0.1.4
 
 - Add a stub implementation for JS platform
