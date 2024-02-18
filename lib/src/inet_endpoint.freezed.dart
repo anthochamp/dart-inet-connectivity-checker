@@ -12,7 +12,7 @@ part of 'inet_endpoint.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$InetEndpoint {
@@ -63,22 +63,22 @@ class _$InetEndpointCopyWithImpl<$Res, $Val extends InetEndpoint>
 }
 
 /// @nodoc
-abstract class _$$_InetEndpointCopyWith<$Res>
+abstract class _$$InetEndpointImplCopyWith<$Res>
     implements $InetEndpointCopyWith<$Res> {
-  factory _$$_InetEndpointCopyWith(
-          _$_InetEndpoint value, $Res Function(_$_InetEndpoint) then) =
-      __$$_InetEndpointCopyWithImpl<$Res>;
+  factory _$$InetEndpointImplCopyWith(
+          _$InetEndpointImpl value, $Res Function(_$InetEndpointImpl) then) =
+      __$$InetEndpointImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String host, int port});
 }
 
 /// @nodoc
-class __$$_InetEndpointCopyWithImpl<$Res>
-    extends _$InetEndpointCopyWithImpl<$Res, _$_InetEndpoint>
-    implements _$$_InetEndpointCopyWith<$Res> {
-  __$$_InetEndpointCopyWithImpl(
-      _$_InetEndpoint _value, $Res Function(_$_InetEndpoint) _then)
+class __$$InetEndpointImplCopyWithImpl<$Res>
+    extends _$InetEndpointCopyWithImpl<$Res, _$InetEndpointImpl>
+    implements _$$InetEndpointImplCopyWith<$Res> {
+  __$$InetEndpointImplCopyWithImpl(
+      _$InetEndpointImpl _value, $Res Function(_$InetEndpointImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_InetEndpointCopyWithImpl<$Res>
     Object? host = null,
     Object? port = null,
   }) {
-    return _then(_$_InetEndpoint(
+    return _then(_$InetEndpointImpl(
       host: null == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_InetEndpointCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InetEndpoint implements _InetEndpoint {
-  const _$_InetEndpoint({required this.host, required this.port});
+class _$InetEndpointImpl implements _InetEndpoint {
+  const _$InetEndpointImpl({required this.host, required this.port});
 
   @override
   final String host;
@@ -116,10 +116,10 @@ class _$_InetEndpoint implements _InetEndpoint {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InetEndpoint &&
+            other is _$InetEndpointImpl &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.port, port) || other.port == port));
   }
@@ -130,13 +130,14 @@ class _$_InetEndpoint implements _InetEndpoint {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InetEndpointCopyWith<_$_InetEndpoint> get copyWith =>
-      __$$_InetEndpointCopyWithImpl<_$_InetEndpoint>(this, _$identity);
+  _$$InetEndpointImplCopyWith<_$InetEndpointImpl> get copyWith =>
+      __$$InetEndpointImplCopyWithImpl<_$InetEndpointImpl>(this, _$identity);
 }
 
 abstract class _InetEndpoint implements InetEndpoint {
   const factory _InetEndpoint(
-      {required final String host, required final int port}) = _$_InetEndpoint;
+      {required final String host,
+      required final int port}) = _$InetEndpointImpl;
 
   @override
   String get host;
@@ -144,6 +145,6 @@ abstract class _InetEndpoint implements InetEndpoint {
   int get port;
   @override
   @JsonKey(ignore: true)
-  _$$_InetEndpointCopyWith<_$_InetEndpoint> get copyWith =>
+  _$$InetEndpointImplCopyWith<_$InetEndpointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
