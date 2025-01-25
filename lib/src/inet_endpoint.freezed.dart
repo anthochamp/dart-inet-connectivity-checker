@@ -19,7 +19,9 @@ mixin _$InetEndpoint {
   String get host => throw _privateConstructorUsedError;
   int get port => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InetEndpoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InetEndpointCopyWith<InetEndpoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$InetEndpointCopyWithImpl<$Res, $Val extends InetEndpoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InetEndpoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$InetEndpointImplCopyWithImpl<$Res>
       _$InetEndpointImpl _value, $Res Function(_$InetEndpointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InetEndpoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,7 +133,9 @@ class _$InetEndpointImpl implements _InetEndpoint {
   @override
   int get hashCode => Object.hash(runtimeType, host, port);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InetEndpoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InetEndpointImplCopyWith<_$InetEndpointImpl> get copyWith =>
@@ -143,8 +151,11 @@ abstract class _InetEndpoint implements InetEndpoint {
   String get host;
   @override
   int get port;
+
+  /// Create a copy of InetEndpoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InetEndpointImplCopyWith<_$InetEndpointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
