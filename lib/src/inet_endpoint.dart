@@ -8,8 +8,6 @@ part 'inet_endpoint.freezed.dart';
 
 @freezed
 class InetEndpoint with _$InetEndpoint {
-  const factory InetEndpoint({
-    required String host,
-    required int port,
-  }) = _InetEndpoint;
+  const factory InetEndpoint({required String host, required int port}) =
+      _InetEndpoint;
 }

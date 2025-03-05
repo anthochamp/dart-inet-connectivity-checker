@@ -83,33 +83,36 @@ class InetConcurrentConnectivityChecker {
     if (_fillOperationsLocked) return;
     _fillOperationsLocked = true;
 
-    while (
-        !_canceledOrCompleted() && _runningOperations.length < maxConcurrency) {
+    while (!_canceledOrCompleted() &&
+        _runningOperations.length < maxConcurrency) {
       if (!_endpointsIterator.moveNext()) {
         break;
       }
 
-      final operation = InetConnectivityChecker(
-        endpoint: _endpointsIterator.current,
-        timeout: timeoutPerEndpoint,
-      ).cancelableOperation;
+      final operation =
+          InetConnectivityChecker(
+            endpoint: _endpointsIterator.current,
+            timeout: timeoutPerEndpoint,
+          ).cancelableOperation;
 
       _runningOperations.add(operation);
 
-      operation.value.whenComplete(() {
-        _runningOperations.remove(operation);
-      }).then(
-        (success) {
-          if (success) {
-            _complete(true);
-          } else {
-            _fillOperations();
-          }
-        },
-        onError: (_) {
-          _fillOperations();
-        },
-      );
+      operation.value
+          .whenComplete(() {
+            _runningOperations.remove(operation);
+          })
+          .then(
+            (success) {
+              if (success) {
+                _complete(true);
+              } else {
+                _fillOperations();
+              }
+            },
+            onError: (_) {
+              _fillOperations();
+            },
+          );
     }
 
     if (_runningOperations.isEmpty) {

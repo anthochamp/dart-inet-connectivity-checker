@@ -7,10 +7,7 @@ import 'package:async/async.dart';
 import 'inet_connectivity_checker_base.dart';
 
 class InetConnectivityChecker extends InetConnectivityCheckerBase {
-  InetConnectivityChecker({
-    required super.endpoint,
-    super.timeout,
-  }) {
+  InetConnectivityChecker({required super.endpoint, super.timeout}) {
     _completer.completeError(UnsupportedError('JS platform'));
   }
 
