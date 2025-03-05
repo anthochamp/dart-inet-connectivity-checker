@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,153 +10,136 @@ part of 'inet_endpoint.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$InetEndpoint {
-  String get host => throw _privateConstructorUsedError;
-  int get port => throw _privateConstructorUsedError;
 
-  /// Create a copy of InetEndpoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $InetEndpointCopyWith<InetEndpoint> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get host; int get port;
+/// Create a copy of InetEndpoint
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InetEndpointCopyWith<InetEndpoint> get copyWith => _$InetEndpointCopyWithImpl<InetEndpoint>(this as InetEndpoint, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InetEndpoint&&(identical(other.host, host) || other.host == host)&&(identical(other.port, port) || other.port == port));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,host,port);
+
+@override
+String toString() {
+  return 'InetEndpoint(host: $host, port: $port)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InetEndpointCopyWith<$Res> {
-  factory $InetEndpointCopyWith(
-          InetEndpoint value, $Res Function(InetEndpoint) then) =
-      _$InetEndpointCopyWithImpl<$Res, InetEndpoint>;
-  @useResult
-  $Res call({String host, int port});
-}
+abstract mixin class $InetEndpointCopyWith<$Res>  {
+  factory $InetEndpointCopyWith(InetEndpoint value, $Res Function(InetEndpoint) _then) = _$InetEndpointCopyWithImpl;
+@useResult
+$Res call({
+ String host, int port
+});
 
+
+
+
+}
 /// @nodoc
-class _$InetEndpointCopyWithImpl<$Res, $Val extends InetEndpoint>
+class _$InetEndpointCopyWithImpl<$Res>
     implements $InetEndpointCopyWith<$Res> {
-  _$InetEndpointCopyWithImpl(this._value, this._then);
+  _$InetEndpointCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InetEndpoint _self;
+  final $Res Function(InetEndpoint) _then;
 
-  /// Create a copy of InetEndpoint
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = null,
-    Object? port = null,
-  }) {
-    return _then(_value.copyWith(
-      host: null == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String,
-      port: null == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of InetEndpoint
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? host = null,Object? port = null,}) {
+  return _then(_self.copyWith(
+host: null == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String,port: null == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$InetEndpointImplCopyWith<$Res>
-    implements $InetEndpointCopyWith<$Res> {
-  factory _$$InetEndpointImplCopyWith(
-          _$InetEndpointImpl value, $Res Function(_$InetEndpointImpl) then) =
-      __$$InetEndpointImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String host, int port});
 }
 
-/// @nodoc
-class __$$InetEndpointImplCopyWithImpl<$Res>
-    extends _$InetEndpointCopyWithImpl<$Res, _$InetEndpointImpl>
-    implements _$$InetEndpointImplCopyWith<$Res> {
-  __$$InetEndpointImplCopyWithImpl(
-      _$InetEndpointImpl _value, $Res Function(_$InetEndpointImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of InetEndpoint
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = null,
-    Object? port = null,
-  }) {
-    return _then(_$InetEndpointImpl(
-      host: null == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String,
-      port: null == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$InetEndpointImpl implements _InetEndpoint {
-  const _$InetEndpointImpl({required this.host, required this.port});
 
-  @override
-  final String host;
-  @override
-  final int port;
+class _InetEndpoint implements InetEndpoint {
+  const _InetEndpoint({required this.host, required this.port});
+  
 
-  @override
-  String toString() {
-    return 'InetEndpoint(host: $host, port: $port)';
-  }
+@override final  String host;
+@override final  int port;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InetEndpointImpl &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.port, port) || other.port == port));
-  }
+/// Create a copy of InetEndpoint
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InetEndpointCopyWith<_InetEndpoint> get copyWith => __$InetEndpointCopyWithImpl<_InetEndpoint>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, host, port);
 
-  /// Create a copy of InetEndpoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InetEndpointImplCopyWith<_$InetEndpointImpl> get copyWith =>
-      __$$InetEndpointImplCopyWithImpl<_$InetEndpointImpl>(this, _$identity);
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InetEndpoint&&(identical(other.host, host) || other.host == host)&&(identical(other.port, port) || other.port == port));
 }
 
-abstract class _InetEndpoint implements InetEndpoint {
-  const factory _InetEndpoint(
-      {required final String host,
-      required final int port}) = _$InetEndpointImpl;
 
-  @override
-  String get host;
-  @override
-  int get port;
+@override
+int get hashCode => Object.hash(runtimeType,host,port);
 
-  /// Create a copy of InetEndpoint
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InetEndpointImplCopyWith<_$InetEndpointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'InetEndpoint(host: $host, port: $port)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InetEndpointCopyWith<$Res> implements $InetEndpointCopyWith<$Res> {
+  factory _$InetEndpointCopyWith(_InetEndpoint value, $Res Function(_InetEndpoint) _then) = __$InetEndpointCopyWithImpl;
+@override @useResult
+$Res call({
+ String host, int port
+});
+
+
+
+
+}
+/// @nodoc
+class __$InetEndpointCopyWithImpl<$Res>
+    implements _$InetEndpointCopyWith<$Res> {
+  __$InetEndpointCopyWithImpl(this._self, this._then);
+
+  final _InetEndpoint _self;
+  final $Res Function(_InetEndpoint) _then;
+
+/// Create a copy of InetEndpoint
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? host = null,Object? port = null,}) {
+  return _then(_InetEndpoint(
+host: null == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String,port: null == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

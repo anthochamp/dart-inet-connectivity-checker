@@ -7,9 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'inet_endpoint.freezed.dart';
 
 @freezed
-class InetEndpoint with _$InetEndpoint {
-  const factory InetEndpoint({
-    required String host,
-    required int port,
-  }) = _InetEndpoint;
+sealed class InetEndpoint with _$InetEndpoint {
+  const factory InetEndpoint({required String host, required int port}) =
+      _InetEndpoint;
 }

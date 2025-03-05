@@ -10,10 +10,7 @@ abstract class InetConnectivityCheckerBase {
   final InetEndpoint endpoint;
   final Duration? timeout;
 
-  InetConnectivityCheckerBase({
-    required this.endpoint,
-    this.timeout,
-  });
+  InetConnectivityCheckerBase({required this.endpoint, this.timeout});
 
   CancelableOperation<bool> get cancelableOperation;
 

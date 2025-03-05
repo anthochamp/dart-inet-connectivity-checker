@@ -10,13 +10,12 @@ import 'package:async/async.dart';
 import 'inet_connectivity_checker_base.dart';
 
 class InetConnectivityChecker extends InetConnectivityCheckerBase {
-  InetConnectivityChecker({
-    required super.endpoint,
-    super.timeout,
-  }) {
-    _completer = CancelableCompleter<bool>(onCancel: () {
-      _connectionTask?.cancel();
-    });
+  InetConnectivityChecker({required super.endpoint, super.timeout}) {
+    _completer = CancelableCompleter<bool>(
+      onCancel: () {
+        _connectionTask?.cancel();
+      },
+    );
 
     unawaited(_connect());
   }
@@ -41,15 +40,17 @@ class InetConnectivityChecker extends InetConnectivityCheckerBase {
       future = future.timeout(timeout!);
     }
 
-    unawaited(future.then(
-      (socket) {
-        socket.destroy();
+    unawaited(
+      future.then(
+        (socket) {
+          socket.destroy();
 
-        _completer.complete(true);
-      },
-      onError: (_) {
-        _completer.complete(false);
-      },
-    ));
+          _completer.complete(true);
+        },
+        onError: (_) {
+          _completer.complete(false);
+        },
+      ),
+    );
   }
 }
