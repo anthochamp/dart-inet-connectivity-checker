@@ -1,6 +1,6 @@
 name: ac_inet_connectivity_checker
 description: A simple, cancellable and stateless Internet connectivity checker which do not depend on any protocol
-version: 0.2.0
+version: 0.3.0
 repository: https://github.com/anthochamp/dart-inet-connectivity-checker
 
 environment:
